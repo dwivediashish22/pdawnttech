@@ -31,56 +31,45 @@
               </div>
             </div><!-- End Info Item -->
 
-            <div class="col-md-6">
-              <div class="info-item" data-aos="fade" data-aos-delay="400">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
-                <!-- <p>info@example.com</p>
-                <p>contact@example.com</p> -->
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-md-6">
-              <div class="info-item" data-aos="fade" data-aos-delay="500">
-                <i class="bi bi-clock"></i>
-                <h3>Open Hours</h3>
-                <p>Monday - Friday</p>
-                <p>9:00AM - 06:00PM</p>
-              </div>
-            </div><!-- End Info Item -->
-
           </div>
-
         </div>
-
         <div class="col-lg-6">
           <h3>Write Your Query?</h3>
-          <form action="forms/contact.php" method="post" class="php-email-form"   data-aos-delay="200">
+          <!-- <form action="forms/contact.php" method="post" class="php-email-form"   data-aos-delay="200"> -->
+            <form id="contactForm" action="/submit" method="post"  data-aos-delay="200">
             <div class="row gy-4">
 
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                <input type="text" id="name" name="name" placeholder="Enter your name"
+                 required [(ngModel)]="query.name">
               </div>
 
-              <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-              </div>
-
-              <div class="col-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              <div class="col-md-6">
+                <input type="number" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile" required [(ngModel)]="query.mobile">
               </div>
 
               <div class="col-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                <input type="email" class="form-control" id ="email" name="email" placeholder="Your Email" required [(ngModel)]="query.email">
               </div>
 
-              <div class="col-12 text-center">
+              <div class="col-12">
+                <input type="text" class="form-control" id ="subject" name="subject" placeholder="Subject" required [(ngModel)]="query.subject">
+              </div>
+
+              <div class="col-12">
+                <textarea class="form-control" id ="message" name="message" rows="6" placeholder="Message" required [(ngModel)]="query.message"></textarea>
+              </div>
+
+              <div class="text-center form-group d-flex justify-content-center" >
+                <button type="submit" (click)="submit()">Submit</button>
+            </div>
+              <!-- <div class="col-12 text-center">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
 
                 <button type="submit">Send Message</button>
-              </div>
+              </div> -->
 
             </div>
           </form>
