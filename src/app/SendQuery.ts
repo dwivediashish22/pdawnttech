@@ -5,4 +5,5 @@ export class SendQuery{
     email?: string;
     subject?: string;
     message?: string;
+    projectId?: number;
 }

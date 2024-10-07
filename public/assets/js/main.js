@@ -32,7 +32,7 @@
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  mobileNavToggleBtn?.addEventListener('click', mobileNavToogle);
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -78,7 +78,7 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
+  scrollTop?.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
       top: 0,
@@ -160,9 +160,9 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+    document.querySelectorAll(".init-swiper")?.forEach(function(swiperElement) {
+      let config = JSON?.parse(
+        swiperElement.querySelector(".swiper-config")?.innerHTML.trim()
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
