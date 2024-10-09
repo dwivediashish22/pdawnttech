@@ -39,6 +39,13 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function toggleAnswer(questionElement) {
+        const answerElement = questionElement.nextElementSibling;
+        answerElement.style.display = answerElement.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
 </body>
 
 </html>
